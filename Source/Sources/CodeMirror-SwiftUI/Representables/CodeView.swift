@@ -74,6 +74,14 @@ public struct CodeView: RepresentableView {
     return webView
   }
   
+  fileprivate func updateWebView(_ context: CodeView.Context) {
+    updateWhatsNecessary(elementGetter: context.coordinator.getMimeType(_:), elementSetter: context.coordinator.setMimeType(_:), currentElementState: self.mode.mimeType)
+    
+    updateWhatsNecessary(elementGetter: context.coordinator.getContent(_:), elementSetter: context.coordinator.setContent(_:), currentElementState: self.code)
+    
+    context.coordinator.setThemeName(self.theme)
+  }
+  
   #if os(OSX)
   public func makeNSView(context: Context) -> WKWebView {
     createWebView(context)
@@ -87,15 +95,12 @@ public struct CodeView: RepresentableView {
   #if os(OSX)
   public func updateNSView(_ codeMirrorView: WKWebView, context: Context) {
     
-    updateWhatsNecessary(elementGetter: context.coordinator.getMimeType(_:), elementSetter: context.coordinator.setMimeType(_:), currentElementState: self.mode.mimeType)
-    
-    updateWhatsNecessary(elementGetter: context.coordinator.getContent(_:), elementSetter: context.coordinator.setContent(_:), currentElementState: self.code)
+    updateWebView(context)
   }
   #elseif os(iOS)
   public func updateUIView(_ uiView: WKWebView, context: Context) {
-    updateWhatsNecessary(elementGetter: context.coordinator.getMimeType(_:), elementSetter: context.coordinator.setMimeType(_:), currentElementState: self.mode.mimeType)
     
-    updateWhatsNecessary(elementGetter: context.coordinator.getContent(_:), elementSetter: context.coordinator.setContent(_:), currentElementState: self.code)
+    updateWebView(context)
   }
   #endif
   
