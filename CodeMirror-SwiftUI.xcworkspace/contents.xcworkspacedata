@@ -8,6 +8,6 @@
       location = "group:CodeMirroriOS/CodeMirroriOS.xcodeproj">
    </FileRef>
    <FileRef
-      location = "container:CodeMirror-SwiftUI">
+      location = "group:Source">
    </FileRef>
 </Workspace>

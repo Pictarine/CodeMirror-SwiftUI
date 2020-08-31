@@ -38,6 +38,10 @@
 		797F6C8B24FD432400CA59B7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		797F6C8D24FD432400CA59B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		797F6C9424FD43AB00CA59B7 /* Demo.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Demo.txt; sourceTree = "<group>"; };
+		797F6C9E24FD559600CA59B7 /* Source */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Source; path = ../Source; sourceTree = "<group>"; };
+		797F6C9F24FD55B200CA59B7 /* Source */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Source; path = ../Source; sourceTree = "<group>"; };
+		797F6CA024FD55BD00CA59B7 /* Source */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Source; path = ../Source; sourceTree = "<group>"; };
+		797F6CA124FD55C800CA59B7 /* Source */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Source; path = ../Source; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +59,8 @@
 		797F6C7824FD432100CA59B7 = {
 			isa = PBXGroup;
 			children = (
+				797F6CA024FD55BD00CA59B7 /* Source */,
+				797F6CA124FD55C800CA59B7 /* Source */,
 				797F6C8324FD432100CA59B7 /* CodeMirroriOS */,
 				797F6C8224FD432100CA59B7 /* Products */,
 				797F6C9624FD43C000CA59B7 /* Frameworks */,
@@ -101,6 +107,8 @@
 		797F6C9624FD43C000CA59B7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				797F6C9F24FD55B200CA59B7 /* Source */,
+				797F6C9E24FD559600CA59B7 /* Source */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
