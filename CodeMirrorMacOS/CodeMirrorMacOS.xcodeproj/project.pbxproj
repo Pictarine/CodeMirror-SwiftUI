@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		792A3EA524FE86F300A2CC7D /* CodeMirror-SwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 792A3EA424FE86F300A2CC7D /* CodeMirror-SwiftUI */; };
+		792A3EA624FE86F300A2CC7D /* CodeMirror-SwiftUI in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 792A3EA424FE86F300A2CC7D /* CodeMirror-SwiftUI */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		797B92D424F9304300071669 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797B92D324F9304300071669 /* AppDelegate.swift */; };
 		797B92D624F9304300071669 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797B92D524F9304300071669 /* ContentView.swift */; };
 		797B92D824F9304700071669 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 797B92D724F9304700071669 /* Assets.xcassets */; };
 		797B92DB24F9304700071669 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 797B92DA24F9304700071669 /* Preview Assets.xcassets */; };
 		797B92DE24F9304700071669 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 797B92DC24F9304700071669 /* Main.storyboard */; };
-		797B92E824F9322300071669 /* CodeMirror-SwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 797B92E724F9322300071669 /* CodeMirror-SwiftUI */; };
-		797B92E924F9322300071669 /* CodeMirror-SwiftUI in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 797B92E724F9322300071669 /* CodeMirror-SwiftUI */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		79940A2024FD3CCA00DA2760 /* Demo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 79940A1F24FD3CCA00DA2760 /* Demo.txt */; };
 /* End PBXBuildFile section */
 
@@ -24,7 +24,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				797B92E924F9322300071669 /* CodeMirror-SwiftUI in Embed Frameworks */,
+				792A3EA624FE86F300A2CC7D /* CodeMirror-SwiftUI in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -48,7 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				797B92E824F9322300071669 /* CodeMirror-SwiftUI in Frameworks */,
+				792A3EA524FE86F300A2CC7D /* CodeMirror-SwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,7 +128,7 @@
 			);
 			name = CodeMirrorMacOS;
 			packageProductDependencies = (
-				797B92E724F9322300071669 /* CodeMirror-SwiftUI */,
+				792A3EA424FE86F300A2CC7D /* CodeMirror-SwiftUI */,
 			);
 			productName = CodeMirrorMacOS;
 			productReference = 797B92D024F9304300071669 /* CodeMirrorMacOS.app */;
@@ -388,7 +388,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		797B92E724F9322300071669 /* CodeMirror-SwiftUI */ = {
+		792A3EA424FE86F300A2CC7D /* CodeMirror-SwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = "CodeMirror-SwiftUI";
 		};

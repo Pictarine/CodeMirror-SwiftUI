@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		792A3EA224FE7DE000A2CC7D /* CodeMirror-SwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 792A3EA124FE7DE000A2CC7D /* CodeMirror-SwiftUI */; };
+		792A3EA324FE7DE000A2CC7D /* CodeMirror-SwiftUI in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 792A3EA124FE7DE000A2CC7D /* CodeMirror-SwiftUI */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		797F6C8524FD432100CA59B7 /* CodeMirroriOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797F6C8424FD432100CA59B7 /* CodeMirroriOSApp.swift */; };
 		797F6C8724FD432100CA59B7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797F6C8624FD432100CA59B7 /* ContentView.swift */; };
 		797F6C8924FD432400CA59B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 797F6C8824FD432400CA59B7 /* Assets.xcassets */; };
 		797F6C8C24FD432400CA59B7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 797F6C8B24FD432400CA59B7 /* Preview Assets.xcassets */; };
 		797F6C9524FD43AB00CA59B7 /* Demo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 797F6C9424FD43AB00CA59B7 /* Demo.txt */; };
-		797F6C9C24FD44BA00CA59B7 /* CodeMirror-SwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 797F6C9B24FD44BA00CA59B7 /* CodeMirror-SwiftUI */; };
-		797F6C9D24FD44BA00CA59B7 /* CodeMirror-SwiftUI in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 797F6C9B24FD44BA00CA59B7 /* CodeMirror-SwiftUI */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,7 +23,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				797F6C9D24FD44BA00CA59B7 /* CodeMirror-SwiftUI in Embed Frameworks */,
+				792A3EA324FE7DE000A2CC7D /* CodeMirror-SwiftUI in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -40,8 +40,6 @@
 		797F6C9424FD43AB00CA59B7 /* Demo.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Demo.txt; sourceTree = "<group>"; };
 		797F6C9E24FD559600CA59B7 /* Source */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Source; path = ../Source; sourceTree = "<group>"; };
 		797F6C9F24FD55B200CA59B7 /* Source */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Source; path = ../Source; sourceTree = "<group>"; };
-		797F6CA024FD55BD00CA59B7 /* Source */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Source; path = ../Source; sourceTree = "<group>"; };
-		797F6CA124FD55C800CA59B7 /* Source */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Source; path = ../Source; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,7 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				797F6C9C24FD44BA00CA59B7 /* CodeMirror-SwiftUI in Frameworks */,
+				792A3EA224FE7DE000A2CC7D /* CodeMirror-SwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,8 +57,6 @@
 		797F6C7824FD432100CA59B7 = {
 			isa = PBXGroup;
 			children = (
-				797F6CA024FD55BD00CA59B7 /* Source */,
-				797F6CA124FD55C800CA59B7 /* Source */,
 				797F6C8324FD432100CA59B7 /* CodeMirroriOS */,
 				797F6C8224FD432100CA59B7 /* Products */,
 				797F6C9624FD43C000CA59B7 /* Frameworks */,
@@ -131,7 +127,7 @@
 			);
 			name = CodeMirroriOS;
 			packageProductDependencies = (
-				797F6C9B24FD44BA00CA59B7 /* CodeMirror-SwiftUI */,
+				792A3EA124FE7DE000A2CC7D /* CodeMirror-SwiftUI */,
 			);
 			productName = CodeMirroriOS;
 			productReference = 797F6C8124FD432100CA59B7 /* CodeMirroriOS.app */;
@@ -379,7 +375,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		797F6C9B24FD44BA00CA59B7 /* CodeMirror-SwiftUI */ = {
+		792A3EA124FE7DE000A2CC7D /* CodeMirror-SwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = "CodeMirror-SwiftUI";
 		};

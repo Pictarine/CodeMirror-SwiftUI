@@ -10,6 +10,7 @@ import Foundation
 import WebKit
 
 
+
 // MARK: - JavascriptFunction
 
 typealias JavascriptCallback = (Result<Any?, Error>) -> Void
@@ -23,6 +24,7 @@ private struct JavascriptFunction {
     self.callback = callback
   }
 }
+
 
 
 // MARK: - CodeMirrorViewController Coordinator
@@ -71,6 +73,7 @@ public class CodeViewController: NSObject {
       addFunction(function: JavascriptFunction(functionString: javascriptString, callback: callback))
     }
   }
+  
 }
 
 

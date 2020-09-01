@@ -18,7 +18,16 @@ struct ContentView: View {
     CodeView(theme: codeTheme,
              code: codeBlock,
              mode: codeMode)
-    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
+      .onLoadSuccess {
+        print("Loaded")
+      }
+      .onContentChange { newCode in
+        print("Content Change")
+      }
+      .onLoadFail { error in
+        print("Load failed : \(error.localizedDescription)")
+      }
+      .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
   }
 }
 
