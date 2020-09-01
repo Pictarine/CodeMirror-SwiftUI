@@ -41,8 +41,8 @@ public struct CodeView: RepresentableView {
     preferences.javaScriptEnabled = true
     
     let userController = WKUserContentController()
-    userController.add(context.coordinator, name: CodeMirrorViewConstants.isReady)
-    userController.add(context.coordinator, name: CodeMirrorViewConstants.textContentDidChange)
+    userController.add(context.coordinator, name: CodeViewRPC.isReady)
+    userController.add(context.coordinator, name: CodeViewRPC.textContentDidChange)
     
     let configuration = WKWebViewConfiguration()
     configuration.preferences = preferences
@@ -104,8 +104,8 @@ public struct CodeView: RepresentableView {
   }
   #endif
   
-  public func makeCoordinator() -> CodeMirrorViewController {
-    CodeMirrorViewController(self)
+  public func makeCoordinator() -> CodeViewController {
+    CodeViewController(self)
   }
   
   func updateWhatsNecessary(elementGetter: (JavascriptCallback?) -> Void,

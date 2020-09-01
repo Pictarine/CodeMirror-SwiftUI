@@ -1,5 +1,5 @@
 //
-//  CodeMirrorWebViewController.swift
+//  CodeViewController.swift
 //  
 //
 //  Created by Anthony Fernandez on 7/29/20.
@@ -10,7 +10,7 @@ import Foundation
 import WebKit
 
 
-// MARK: JavascriptFunction
+// MARK: - JavascriptFunction
 
 typealias JavascriptCallback = (Result<Any?, Error>) -> Void
 private struct JavascriptFunction {
@@ -25,19 +25,114 @@ private struct JavascriptFunction {
 }
 
 
-// MARK: CodeMirrorViewController Coordinator
+// MARK: - CodeMirrorViewController Coordinator
 
-public class CodeMirrorViewController: NSObject {
+public class CodeViewController: NSObject {
+  
+  // MARK: Properties
+  
   var parent: CodeView
   weak var webView: WKWebView?
   
   fileprivate var pageLoaded = false
   fileprivate var pendingFunctions = [JavascriptFunction]()
+  
   init(_ parent: CodeView) {
     self.parent = parent
   }
   
-  // MARK: Properties
+  private func addFunction(function:JavascriptFunction) {
+    pendingFunctions.append(function)
+  }
+  
+  private func callJavascriptFunction(function: JavascriptFunction) {
+    webView?.evaluateJavaScript(function.functionString) { (response, error) in
+      if let error = error {
+        function.callback?(.failure(error))
+      }
+      else {
+        function.callback?(.success(response))
+      }
+    }
+  }
+  
+  private func callPendingFunctions() {
+    for function in pendingFunctions {
+      callJavascriptFunction(function: function)
+    }
+    pendingFunctions.removeAll()
+  }
+  
+  private func callJavascript(javascriptString: String, callback: JavascriptCallback? = nil) {
+    if pageLoaded {
+      callJavascriptFunction(function: JavascriptFunction(functionString: javascriptString, callback: callback))
+    }
+    else {
+      addFunction(function: JavascriptFunction(functionString: javascriptString, callback: callback))
+    }
+  }
+}
+
+
+
+// MARK: - WKScriptMessageHandler Implementation
+
+extension CodeViewController: WKScriptMessageHandler {
+  
+  public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+    print("didFinish")
+    parent.onLoadSuccess?()
+  }
+  
+  public func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+    print("didFail \(error.localizedDescription)")
+    parent.onLoadFail?(error)
+  }
+  
+  public func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+    print("didFailProvisionalNavigation")
+    parent.onLoadFail?(error)
+  }
+}
+
+
+
+// MARK: - WKNavigationDelegate Implementation
+
+extension CodeViewController: WKNavigationDelegate {
+  
+  public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+    
+    // is Ready
+    if message.name == CodeViewRPC.isReady {
+      pageLoaded = true
+      callPendingFunctions()
+      return
+    }
+    
+    // Content change
+    if message.name == CodeViewRPC.textContentDidChange {
+      let content = (message.body as? String) ?? ""
+      
+      if content != parent.code {
+        parent.onContentChange?(content)
+        parent.code = content
+      }
+      return
+    }
+  }
+  
+}
+
+
+
+// MARK: - Public API
+
+extension CodeViewController {
+  
+  public func setWebView(_ webView: WKWebView) {
+    self.webView = webView
+  }
   
   func setTabInsertsSpaces(_ value: Bool) {
     callJavascript(javascriptString: "SetTabInsertSpaces(\(value));")
@@ -86,87 +181,6 @@ public class CodeMirrorViewController: NSObject {
   
   func getTextSelection(_ block: JavascriptCallback?) {
     callJavascript(javascriptString: "GetTextSelection();", callback: block)
-  }
-  
-  private func addFunction(function:JavascriptFunction) {
-    pendingFunctions.append(function)
-  }
-  
-  private func callJavascriptFunction(function: JavascriptFunction) {
-    webView?.evaluateJavaScript(function.functionString) { (response, error) in
-      if let error = error {
-        function.callback?(.failure(error))
-      }
-      else {
-        function.callback?(.success(response))
-      }
-    }
-  }
-  
-  private func callPendingFunctions() {
-    for function in pendingFunctions {
-      callJavascriptFunction(function: function)
-    }
-    pendingFunctions.removeAll()
-  }
-  
-  private func callJavascript(javascriptString: String, callback: JavascriptCallback? = nil) {
-    if pageLoaded {
-      callJavascriptFunction(function: JavascriptFunction(functionString: javascriptString, callback: callback))
-    }
-    else {
-      addFunction(function: JavascriptFunction(functionString: javascriptString, callback: callback))
-    }
-  }
-}
-
-extension CodeMirrorViewController: WKScriptMessageHandler {
-  
-  public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-    print("didFinish")
-    parent.onLoadSuccess?()
-  }
-  
-  public func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-    print("didFail \(error.localizedDescription)")
-    parent.onLoadFail?(error)
-  }
-  
-  public func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
-    print("didFailProvisionalNavigation")
-    parent.onLoadFail?(error)
-  }
-}
-
-extension CodeMirrorViewController: WKNavigationDelegate {
-  
-  public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-    
-    // is Ready
-    if message.name == CodeMirrorViewConstants.isReady {
-      pageLoaded = true
-      callPendingFunctions()
-      return
-    }
-    
-    // Content change
-    if message.name == CodeMirrorViewConstants.textContentDidChange {
-      let content = (message.body as? String) ?? ""
-      
-      if content != parent.code {
-        parent.onContentChange?(content)
-        parent.code = content
-      }
-      return
-    }
-  }
-  
-}
-
-extension CodeMirrorViewController {
-  
-  public func setWebView(_ webView: WKWebView) {
-    self.webView = webView
   }
   
 }

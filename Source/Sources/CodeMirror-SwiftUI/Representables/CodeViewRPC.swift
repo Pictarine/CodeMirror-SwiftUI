@@ -1,5 +1,5 @@
 //
-//  CodeViewConstants.swift
+//  CodeViewRPC.swift
 //  
 //
 //  Created by Anthony Fernandez on 7/29/20.
@@ -9,8 +9,10 @@
 import Foundation
 
 
-public struct CodeMirrorViewConstants {
+public struct CodeViewRPC {
+  
   static let isReady = "codeMirrorIsReady"
   static let textContentDidChange = "codeMirrorTextContentDidChange"
   static let logHandler = "codeMirrorLogHandler"
+  
 }
