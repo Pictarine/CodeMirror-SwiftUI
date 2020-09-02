@@ -85,7 +85,7 @@ onContentChange { ... }
 
 - [macOS Demo](https://github.com/Pictarine/CodeMirror-SwiftUI/tree/master/Demo-macOS) and [iOS Demo](https://github.com/Pictarine/CodeMirror-SwiftUI/tree/master/Demo-iOS) are available 
 
-- Snip, a snippet manager for macOS is also using CodeMirror-SwiftUI
+- [Snip](https://github.com/Pictarine/macos-snippets), a snippet manager for macOS is also using CodeMirror-SwiftUI
 
 [![Screen Shot 2020-08-26 at 7 55 56 PM](https://user-images.githubusercontent.com/1506323/91417795-97808a00-e851-11ea-8100-c9d2b075b59d.png)](https://github.com/Pictarine/macos-snippets)
 
