@@ -11,7 +11,7 @@ CodeMirror-SwiftUI
 ![CodeMirror-SwiftUI](https://user-images.githubusercontent.com/1506323/91988828-08cbab80-ed30-11ea-9d6f-1ae9660b9796.png)
 
 
-CodeMirror-SwiftUI is a lightweight wrapper of CodeMirror for macOS and iOS and package for SwiftUI integration. 
+CodeMirror-SwiftUI is a lightweight wrapper of CodeMirror for macOS and iOS and packaged for SwiftUI integration. 
 
 This package is a fork from [CodeMirror-Swift](https://github.com/ProxymanApp/CodeMirror-Swift)
 
