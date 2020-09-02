@@ -2,12 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:CodeMirrorMacOS/CodeMirrorMacOS.xcodeproj">
+      location = "group:Demo-macOS/Demo-macOS.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:CodeMirroriOS/CodeMirroriOS.xcodeproj">
+      location = "group:Demo-iOS/Demo-iOS.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Source">
+      location = "container:">
    </FileRef>
 </Workspace>
