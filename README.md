@@ -1,13 +1,12 @@
 CodeMirror-SwiftUI
 ==================
 
-<p align="center">
 ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/Pictarine/CodeMirror-SwiftUI)
 [![Swift Package Manager](https://img.shields.io/badge/SPM-Compatible-brightgreen.svg?style=flat)](https://swift.org/package-manager)
 ![Swift5](https://img.shields.io/badge/Swift-5-orange.svg)
 ![Platform](https://img.shields.io/badge/platform-iOS|macOS-blue.svg?style=flat)
 ![GitHub repo size](https://img.shields.io/github/repo-size/Pictarine/CodeMirror-SwiftUI)
-</p>
+
 
 ![CodeMirror-SwiftUI](https://user-images.githubusercontent.com/1506323/91988828-08cbab80-ed30-11ea-9d6f-1ae9660b9796.png)
 
