@@ -55,7 +55,7 @@ struct ContentView: View {
       GeometryReader { reader in
         ScrollView {
           CodeView(theme: themes[selectedTheme],
-                   code: codeBlock,
+                   code: $codeBlock,
                    mode: codeMode,
                    fontSize: fontSize)
             .onLoadSuccess {

@@ -58,7 +58,7 @@ CodeView(theme: themes[selectedTheme],
 
 CodeView has multiple params:
 
-- Code* is a String
+- Code* is a Binding<String>
 - Mode* is a Mode object
 - Theme is a CodeViewTheme object (default is `material-palenight`)
 - FontSize is Int (default is 12px)

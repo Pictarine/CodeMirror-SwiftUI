@@ -57,7 +57,7 @@ struct ContentView: View {
       
       .padding()
       CodeView(theme: themes[selectedTheme],
-               code: codeBlock,
+               code: $codeBlock,
                mode: codeMode,
                fontSize: fontSize)
         .onLoadSuccess {

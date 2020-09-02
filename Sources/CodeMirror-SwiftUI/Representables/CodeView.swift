@@ -23,10 +23,10 @@ typealias RepresentableView = UIViewRepresentable
 
 public struct CodeView: RepresentableView {
   
-  public var theme: CodeViewTheme
-  public var code: String
-  public var mode: Mode
-  public var fontSize: Int
+  var theme: CodeViewTheme
+  @Binding var code: String
+  var mode: Mode
+  var fontSize: Int
   
   var onLoadSuccess: (() -> ())?
   var onLoadFail: ((Error) -> ())?
@@ -34,10 +34,10 @@ public struct CodeView: RepresentableView {
   
   
   public init(theme: CodeViewTheme = CodeViewTheme.materialPalenight,
-              code: String,
+              code: Binding<String>,
               mode: Mode,
               fontSize: Int = 12) {
-    self.code = code
+    self._code = code
     self.mode = mode
     self.theme = theme
     self.fontSize = fontSize
