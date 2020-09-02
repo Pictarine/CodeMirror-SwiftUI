@@ -14,6 +14,7 @@ struct ContentView: View {
   @State private var codeBlock = try! String(contentsOf: Bundle.main.url(forResource: "Demo", withExtension: "txt")!)
   @State private var codeMode = CodeMode.swift.mode()
   @State private var selectedTheme = 0
+  @State private var fontSize = 12
   
   private var themes = CodeViewTheme.allCases.sorted {
     return $0.rawValue < $1.rawValue
@@ -21,17 +22,42 @@ struct ContentView: View {
   
   var body: some View {
     VStack {
-      Picker(selection: $selectedTheme, label: Text("Please choose a theme")) {
-        ForEach(0 ..< themes.count) {
-          Text(self.themes[$0].rawValue)
+      HStack {
+        Picker(selection: $selectedTheme, label: EmptyView()) {
+          ForEach(0 ..< themes.count) {
+            Text(self.themes[$0].rawValue)
+          }
         }
+        .frame(minWidth: 100, idealWidth: 150, maxWidth: 150)
+        
+        Spacer()
+        
+        Text("Font Size")
+        
+        Button(action: { fontSize -= 1}) {
+          Image("minus")
+            .resizable()
+            .scaledToFit()
+          
+        }
+        .buttonStyle(PlainButtonStyle())
+        .frame(width: 20, height: 20)
+        
+        Button(action: { fontSize += 1}) {
+          Image("plus")
+            .resizable()
+            .scaledToFit()
+        }
+        .buttonStyle(PlainButtonStyle())
+        .frame(width: 20, height: 20)
       }
       .padding()
       GeometryReader { reader in
         ScrollView {
           CodeView(theme: themes[selectedTheme],
                    code: codeBlock,
-                   mode: codeMode)
+                   mode: codeMode,
+                   fontSize: fontSize)
             .onLoadSuccess {
               print("Loaded")
             }

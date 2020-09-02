@@ -135,6 +135,8 @@ extension CodeViewController {
   
   public func setWebView(_ webView: WKWebView) {
     self.webView = webView
+    setDefaultTheme()
+    setTabInsertsSpaces(true)
   }
   
   func setTabInsertsSpaces(_ value: Bool) {

@@ -26,16 +26,21 @@ public struct CodeView: RepresentableView {
   public var theme: CodeViewTheme
   public var code: String
   public var mode: Mode
+  public var fontSize: Int
   
   var onLoadSuccess: (() -> ())?
   var onLoadFail: ((Error) -> ())?
   var onContentChange: ((String) -> ())?
   
   
-  public init(theme: CodeViewTheme, code: String, mode: Mode) {
+  public init(theme: CodeViewTheme = CodeViewTheme.materialPalenight,
+              code: String,
+              mode: Mode,
+              fontSize: Int = 12) {
     self.code = code
     self.mode = mode
     self.theme = theme
+    self.fontSize = fontSize
   }
   
   
@@ -127,13 +132,13 @@ extension CodeView {
     let data = try! Data(contentsOf: URL(fileURLWithPath: indexPath))
     
     webView.load(data, mimeType: "text/html", characterEncodingName: "utf-8", baseURL: codeMirrorBundle.resourceURL!)
-    
-    context.coordinator.setThemeName(theme.rawValue)
-    context.coordinator.setTabInsertsSpaces(true)
+
     context.coordinator.setWebView(webView)
+    context.coordinator.setThemeName(theme.rawValue)
     
     context.coordinator.setMimeType(mode.mimeType)
     context.coordinator.setContent(code)
+    context.coordinator.setFontSize(fontSize)
     
     return webView
   }
@@ -144,6 +149,7 @@ extension CodeView {
     updateWhatsNecessary(elementGetter: context.coordinator.getContent(_:), elementSetter: context.coordinator.setContent(_:), currentElementState: self.code)
     
     context.coordinator.setThemeName(self.theme.rawValue)
+    context.coordinator.setFontSize(fontSize)
   }
   
   func updateWhatsNecessary(elementGetter: (JavascriptCallback?) -> Void,

@@ -10,9 +10,9 @@
 		7922EE0724FF8F0600C38D3D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7922EE0624FF8F0600C38D3D /* ContentView.swift */; };
 		7922EE0924FF8F0800C38D3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7922EE0824FF8F0800C38D3D /* Assets.xcassets */; };
 		7922EE0C24FF8F0800C38D3D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7922EE0B24FF8F0800C38D3D /* Preview Assets.xcassets */; };
+		7930722F24FFCAB9003A2413 /* CodeMirror-SwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7930722E24FFCAB9003A2413 /* CodeMirror-SwiftUI */; };
+		7930723024FFCAB9003A2413 /* CodeMirror-SwiftUI in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 7930722E24FFCAB9003A2413 /* CodeMirror-SwiftUI */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		79445CE924FF90A3004B2F99 /* Demo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 79445CE824FF90A3004B2F99 /* Demo.txt */; };
-		79445CEC24FF90C8004B2F99 /* CodeMirror-SwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 79445CEB24FF90C8004B2F99 /* CodeMirror-SwiftUI */; };
-		79445CED24FF90C8004B2F99 /* CodeMirror-SwiftUI in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 79445CEB24FF90C8004B2F99 /* CodeMirror-SwiftUI */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		79445CF024FF914C004B2F99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79445CEF24FF914C004B2F99 /* AppDelegate.swift */; };
 		79445CF324FF9204004B2F99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79445CF124FF9204004B2F99 /* Main.storyboard */; };
 /* End PBXBuildFile section */
@@ -24,7 +24,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				79445CED24FF90C8004B2F99 /* CodeMirror-SwiftUI in Embed Frameworks */,
+				7930723024FFCAB9003A2413 /* CodeMirror-SwiftUI in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -48,7 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79445CEC24FF90C8004B2F99 /* CodeMirror-SwiftUI in Frameworks */,
+				7930722F24FFCAB9003A2413 /* CodeMirror-SwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,7 +128,7 @@
 			);
 			name = "Demo-macOS";
 			packageProductDependencies = (
-				79445CEB24FF90C8004B2F99 /* CodeMirror-SwiftUI */,
+				7930722E24FFCAB9003A2413 /* CodeMirror-SwiftUI */,
 			);
 			productName = "Demo-macOS";
 			productReference = 7922EE0124FF8F0600C38D3D /* Demo-macOS.app */;
@@ -157,6 +157,8 @@
 				Base,
 			);
 			mainGroup = 7922EDF824FF8F0600C38D3D;
+			packageReferences = (
+			);
 			productRefGroup = 7922EE0224FF8F0600C38D3D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -391,7 +393,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		79445CEB24FF90C8004B2F99 /* CodeMirror-SwiftUI */ = {
+		7930722E24FFCAB9003A2413 /* CodeMirror-SwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = "CodeMirror-SwiftUI";
 		};
