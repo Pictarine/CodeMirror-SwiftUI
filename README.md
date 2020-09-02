@@ -36,7 +36,7 @@ Using Xcode 11, go to `File -> Swift Packages -> Add Package Dependency` and ent
 
 ```swift
 CodeView(theme: themes[selectedTheme],
-         code: codeBlock,
+         code: $codeBlock,
          mode: codeMode,
          fontSize: fontSize)
 .onLoadSuccess {
