@@ -24,11 +24,17 @@ This package is a fork from [CodeMirror-Swift](https://github.com/ProxymanApp/Co
 - ⚡️ Ready to go
 
 
+## Requirements
+
+- Xcode 12
+- Swift 5.3
+
+
 ## Integration
 
 CodeMirror-SwiftUI is avaialable via [Swift Package Manager](https://swift.org/package-manager/)
 
-Using Xcode 11, go to `File -> Swift Packages -> Add Package Dependency` and enter [https://github.com/Pictarine/CodeMirror-SwiftUI](https://github.com/Pictarine/CodeMirror-SwiftUI)
+Using Xcode 12, go to `File -> Swift Packages -> Add Package Dependency` and enter [https://github.com/Pictarine/CodeMirror-SwiftUI](https://github.com/Pictarine/CodeMirror-SwiftUI)
 
 ## Usage 
 
@@ -44,7 +50,6 @@ CodeView(theme: themes[selectedTheme],
 }
 .onContentChange { newCodeBlock in
   print("Content Change")
-  codeBlock = newCodeBlock
 }
 .onLoadFail { error in
   print("Load failed : \(error.localizedDescription)")
@@ -58,10 +63,10 @@ CodeView(theme: themes[selectedTheme],
 
 CodeView has multiple params:
 
-- Code* is a Binding<String>
-- Mode* is a Mode object
-- Theme is a CodeViewTheme object (default is `material-palenight`)
-- FontSize is Int (default is 12px)
+- `code`* is a Binding<String>
+- `mode`* is a Mode object
+- `theme` is a CodeViewTheme object (default is `material-palenight`)
+- `fontSize` is Int (default is 12px)
 
 * Mandatory params
 
