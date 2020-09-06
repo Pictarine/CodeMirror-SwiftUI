@@ -32,13 +32,13 @@ This package is a fork from [CodeMirror-Swift](https://github.com/ProxymanApp/Co
 
 ## Integration
 
-CodeMirror-SwiftUI is avaialable via [Swift Package Manager](https://swift.org/package-manager/)
+CodeMirror-SwiftUI is available via [Swift Package Manager](https://swift.org/package-manager/)
 
 Using Xcode 12, go to `File -> Swift Packages -> Add Package Dependency` and enter [https://github.com/Pictarine/CodeMirror-SwiftUI](https://github.com/Pictarine/CodeMirror-SwiftUI)
 
 ## Usage 
 
-`CodeMirror` gives you acces to a new view called `CodeView`. It can be integrated within your view `body` like this : 
+`CodeMirror` gives you access to a new view called `CodeView`. It can be integrated within your view `body` like this : 
 
 ```swift
 CodeView(theme: themes[selectedTheme],
