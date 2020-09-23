@@ -44,7 +44,8 @@ Using Xcode 12, go to `File -> Swift Packages -> Add Package Dependency` and ent
 CodeView(theme: themes[selectedTheme],
          code: $codeBlock,
          mode: codeMode,
-         fontSize: fontSize)
+         fontSize: fontSize,
+         showInvisibleCharacters: showInvisibleCharacters)
 .onLoadSuccess {
   print("Loaded")
 }
@@ -66,9 +67,10 @@ CodeView has multiple params:
 - `code`* is a Binding<String>
 - `mode`* is a Mode object
 - `theme` is a CodeViewTheme object (default is `material-palenight`)
-- `fontSize` is Int (default is 12px)
+- `fontSize` is Int (12px by default)
+- `showInvisibleCharacters` is Bool (true by default)
 
-* Mandatory params
+`*` Mandatory params
 
 
 #### Modifiers 

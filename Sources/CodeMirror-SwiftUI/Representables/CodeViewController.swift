@@ -176,6 +176,10 @@ extension CodeViewController {
     callJavascript(javascriptString: "SetFontSize(\(value));")
   }
   
+  func setShowInvisibleCharacters(_ show: Bool) {
+    callJavascript(javascriptString: "ToggleInvisible(\(show));")
+  }
+  
   func setDefaultTheme() {
     setMimeType("application/json")
   }

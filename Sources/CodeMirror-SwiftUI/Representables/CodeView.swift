@@ -22,11 +22,13 @@ typealias RepresentableView = UIViewRepresentable
 // MARK: - CodeView
 
 public struct CodeView: RepresentableView {
+
+  @Binding var code: String
   
   var theme: CodeViewTheme
-  @Binding var code: String
   var mode: Mode
   var fontSize: Int
+  var showInvisibleCharacters: Bool
   
   var onLoadSuccess: (() -> ())?
   var onLoadFail: ((Error) -> ())?
@@ -36,11 +38,13 @@ public struct CodeView: RepresentableView {
   public init(theme: CodeViewTheme = CodeViewTheme.materialPalenight,
               code: Binding<String>,
               mode: Mode,
-              fontSize: Int = 12) {
+              fontSize: Int = 12,
+              showInvisibleCharacters: Bool = true) {
     self._code = code
     self.mode = mode
     self.theme = theme
     self.fontSize = fontSize
+    self.showInvisibleCharacters = showInvisibleCharacters
   }
   
   
@@ -139,6 +143,7 @@ extension CodeView {
     context.coordinator.setMimeType(mode.mimeType)
     context.coordinator.setContent(code)
     context.coordinator.setFontSize(fontSize)
+    context.coordinator.setShowInvisibleCharacters(showInvisibleCharacters)
     
     return webView
   }
@@ -150,6 +155,7 @@ extension CodeView {
     
     context.coordinator.setThemeName(self.theme.rawValue)
     context.coordinator.setFontSize(fontSize)
+    context.coordinator.setShowInvisibleCharacters(showInvisibleCharacters)
   }
   
   func updateWhatsNecessary(elementGetter: (JavascriptCallback?) -> Void,
