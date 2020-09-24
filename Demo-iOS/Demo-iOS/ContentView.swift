@@ -14,6 +14,7 @@ struct ContentView: View {
   @State private var codeMode = CodeMode.swift.mode()
   @State private var selectedTheme = 0
   @State private var fontSize = 12
+  @State private var lineWrapping = true
   
   private var themes = CodeViewTheme.allCases.sorted {
     return $0.rawValue < $1.rawValue
@@ -29,6 +30,10 @@ struct ContentView: View {
         }
         .pickerStyle(MenuPickerStyle())
         .frame(minWidth: 100, idealWidth: 150, maxWidth: 150)
+
+        Spacer()
+
+        Button(action: { lineWrapping.toggle() }) { Text("Wrap") }
         
         Spacer()
         
@@ -59,7 +64,8 @@ struct ContentView: View {
       CodeView(theme: themes[selectedTheme],
                code: $codeBlock,
                mode: codeMode,
-               fontSize: fontSize)
+               fontSize: fontSize,
+               lineWrapping: lineWrapping)
         .onLoadSuccess {
           print("Loaded")
         }

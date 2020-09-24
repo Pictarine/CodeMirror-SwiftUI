@@ -45,7 +45,8 @@ CodeView(theme: themes[selectedTheme],
          code: $codeBlock,
          mode: codeMode,
          fontSize: fontSize,
-         showInvisibleCharacters: showInvisibleCharacters)
+         showInvisibleCharacters: showInvisibleCharacters,
+         lineWrapping: lineWrapping)
 .onLoadSuccess {
   print("Loaded")
 }

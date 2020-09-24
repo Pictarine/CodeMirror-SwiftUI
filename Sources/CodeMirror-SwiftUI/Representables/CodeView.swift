@@ -29,6 +29,7 @@ public struct CodeView: RepresentableView {
   var mode: Mode
   var fontSize: Int
   var showInvisibleCharacters: Bool
+  var lineWrapping: Bool
   
   var onLoadSuccess: (() -> ())?
   var onLoadFail: ((Error) -> ())?
@@ -39,12 +40,14 @@ public struct CodeView: RepresentableView {
               code: Binding<String>,
               mode: Mode,
               fontSize: Int = 12,
-              showInvisibleCharacters: Bool = true) {
+              showInvisibleCharacters: Bool = true,
+              lineWrapping: Bool = true) {
     self._code = code
     self.mode = mode
     self.theme = theme
     self.fontSize = fontSize
     self.showInvisibleCharacters = showInvisibleCharacters
+    self.lineWrapping = lineWrapping
   }
   
   
@@ -146,6 +149,7 @@ extension CodeView {
     context.coordinator.setContent(code)
     context.coordinator.setFontSize(fontSize)
     context.coordinator.setShowInvisibleCharacters(showInvisibleCharacters)
+    context.coordinator.setLineWrapping(lineWrapping)
     
     return webView
   }
@@ -158,6 +162,7 @@ extension CodeView {
     context.coordinator.setThemeName(self.theme.rawValue)
     context.coordinator.setFontSize(fontSize)
     context.coordinator.setShowInvisibleCharacters(showInvisibleCharacters)
+    context.coordinator.setLineWrapping(lineWrapping)
   }
   
   func updateWhatsNecessary(elementGetter: (JavascriptCallback?) -> Void,
