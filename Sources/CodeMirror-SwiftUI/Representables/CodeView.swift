@@ -124,7 +124,7 @@ extension CodeView {
     let webView = WKWebView(frame: .zero, configuration: configuration)
     webView.navigationDelegate = context.coordinator
     #if os(OSX)
-    webView.setValue(false, forKey: "drawsTransparentBackground")
+    webView.setValue(true, forKey: "drawsTransparentBackground")
     webView.allowsMagnification = false
     #elseif os(iOS)
     webView.isOpaque = false
