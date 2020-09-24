@@ -67,6 +67,7 @@ public enum CodeMode: String {
   case latex
   case swift
   case text
+  case toml
   case vb
   case vue
   case xml
@@ -124,6 +125,7 @@ public enum CodeMode: String {
       CodeMode.latex.mode(),
       CodeMode.swift.mode(),
       CodeMode.text.mode(),
+      CodeMode.toml.mode(),
       CodeMode.vb.mode(),
       CodeMode.vue.mode(),
       CodeMode.xml.mode(),
@@ -239,6 +241,8 @@ public enum CodeMode: String {
       return Mode(name: "swift", mimeType: "text/x-swift")
     case .text:
       return Mode(name: "text", mimeType: "text/plain-text")
+    case .toml:
+        return Mode(name: "toml", mimeType: "text/x-toml")
     case .vb:
       return Mode(name: "vb", mimeType: "text/x-vb")
     case .vue:
