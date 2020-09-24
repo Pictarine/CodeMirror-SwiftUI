@@ -53,6 +53,7 @@ public enum CodeMode: String {
   case perl
   case php
   case powershell
+  case properties
   case protobuf
   case python
   case r
@@ -111,6 +112,7 @@ public enum CodeMode: String {
       CodeMode.perl.mode(),
       CodeMode.php.mode(),
       CodeMode.powershell.mode(),
+      CodeMode.properties.mode(),
       CodeMode.protobuf.mode(),
       CodeMode.python.mode(),
       CodeMode.r.mode(),
@@ -213,6 +215,8 @@ public enum CodeMode: String {
       return Mode(name: "php", mimeType: "application/x-httpd-php")
     case .powershell:
       return Mode(name: "powershell", mimeType: "application/x-powershell")
+    case .properties:
+        return Mode(name: "properties", mimeType: "text/x-properties")
     case .protobuf:
       return Mode(name: "protobuf", mimeType: "text/x-protobuf")
     case .python:
