@@ -65,13 +65,15 @@ CodeView(theme: themes[selectedTheme],
 
 CodeView has multiple params:
 
-- `code`* is a Binding<String>
-- `mode`* is a Mode object
-- `theme` is a CodeViewTheme object (default is `material-palenight`)
-- `fontSize` is Int (12px by default)
-- `showInvisibleCharacters` is Bool (true by default)
+| Parameter name          | Optional | Type            | Default             |
+|-------------------------|----------|-----------------|---------------------|
+| code                    | false    | Binding<String> |                     |
+| mode                    | false    | Mode            |                     |
+| theme                   | true     | CodeViewTheme   | \.materialPalenight |
+| fontSize                | true     | Int             | 12 \(px\)           |
+| showInvisibleCharacters | true     | Bool            | true                |
+| lineWrapping            | true     | Bool            | true                |
 
-`*` Mandatory params
 
 
 #### Modifiers 
