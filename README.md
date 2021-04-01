@@ -16,7 +16,7 @@ CodeMirror-SwiftUI is a lightweight wrapper of CodeMirror for macOS and iOS pack
 This package is a fork from [CodeMirror-Swift](https://github.com/ProxymanApp/CodeMirror-Swift)
 
 ## Features
-- 🍭 Lightweight CodeMirror wrapper (build 5.57.0)
+- 🍭 Lightweight CodeMirror wrapper (build 5.59.4)
 - ✅ 100% Native Swift 5 and modern WKWebView
 - 👑 Support iOS & macOS
 - 🎧 Built-in addons
@@ -61,6 +61,15 @@ CodeView(theme: themes[selectedTheme],
 ## Details
 
 
+#### Code Editor Features
+
+- CodeMirror v5.59.4
+- Better find and replace dialog integration
+- Autocompletion hints (ctrl+space)
+- Reindent (ctrl+i)
+- Auto close tags and brackets
+
+
 #### Parameters
 
 CodeView has multiple params:
@@ -97,7 +106,7 @@ onContentChange { ... }
 
 - [Snip](https://github.com/Pictarine/macos-snippets), a snippet manager for macOS is also using CodeMirror-SwiftUI
 
-[![Screen Shot 2020-08-26 at 7 55 56 PM](https://user-images.githubusercontent.com/1506323/91417795-97808a00-e851-11ea-8100-c9d2b075b59d.png)](https://github.com/Pictarine/macos-snippets)
+[![black_light_theme](https://user-images.githubusercontent.com/1506323/110323754-5560ae00-8015-11eb-98a3-7822772cbe00.png)](https://github.com/Pictarine/macos-snippets)
 
 
 ## License

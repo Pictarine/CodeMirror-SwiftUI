@@ -10,9 +10,10 @@ import Foundation
 
 
 public struct Mode: Equatable, Codable {
-
+  
   let name: String
   let mimeType: String
+  
 }
 
 public enum CodeMode: String {
@@ -33,6 +34,7 @@ public enum CodeMode: String {
   case lisp
   case css
   case django
+  case dart
   case dockerfile
   case erlang
   case fortran
@@ -49,6 +51,7 @@ public enum CodeMode: String {
   case lua
   case markdown
   case maths
+  case ntriples
   case pascal
   case perl
   case php
@@ -64,11 +67,13 @@ public enum CodeMode: String {
   case shell
   case sql
   case sqllite
+  case sparql
   case mysql
   case latex
   case swift
   case text
   case toml
+  case turtle
   case vb
   case vue
   case xml
@@ -86,6 +91,7 @@ public enum CodeMode: String {
       CodeMode.kotlin.mode(),
       CodeMode.scala.mode(),
       CodeMode.csharp.mode(),
+      CodeMode.dart.mode(),
       CodeMode.java.mode(),
       CodeMode.cobol.mode(),
       CodeMode.coffeescript.mode(),
@@ -108,6 +114,7 @@ public enum CodeMode: String {
       CodeMode.lua.mode(),
       CodeMode.markdown.mode(),
       CodeMode.maths.mode(),
+      CodeMode.ntriples.mode(),
       CodeMode.pascal.mode(),
       CodeMode.perl.mode(),
       CodeMode.php.mode(),
@@ -123,11 +130,13 @@ public enum CodeMode: String {
       CodeMode.shell.mode(),
       CodeMode.sql.mode(),
       CodeMode.sqllite.mode(),
+      CodeMode.sparql.mode(),
       CodeMode.mysql.mode(),
       CodeMode.latex.mode(),
       CodeMode.swift.mode(),
       CodeMode.text.mode(),
       CodeMode.toml.mode(),
+      CodeMode.turtle.mode(),
       CodeMode.vb.mode(),
       CodeMode.vue.mode(),
       CodeMode.xml.mode(),
@@ -175,6 +184,8 @@ public enum CodeMode: String {
       return Mode(name: "css/scss", mimeType: "text/x-scss")
     case .django:
       return Mode(name: "django", mimeType: "text/x-django")
+    case .dart:
+      return Mode(name: "dart", mimeType: "application/dart")
     case .dockerfile:
       return Mode(name: "dockerfile", mimeType: "text/x-dockerfile")
     case .erlang:
@@ -207,16 +218,18 @@ public enum CodeMode: String {
       return Mode(name: "markdown", mimeType: "text/markdown")
     case .maths:
       return Mode(name: "maths", mimeType: "text/x-mathematica")
+    case .ntriples:
+      return Mode(name: "ntriples", mimeType: "application/n-triples")
     case .pascal:
       return Mode(name: "pascal", mimeType: "text/x-pascal")
     case .perl:
       return Mode(name: "perl", mimeType: "perl")
     case .php:
-      return Mode(name: "php", mimeType: "application/x-httpd-php")
+      return Mode(name: "php", mimeType: "text/x-php")
     case .powershell:
       return Mode(name: "powershell", mimeType: "application/x-powershell")
     case .properties:
-        return Mode(name: "properties", mimeType: "text/x-properties")
+      return Mode(name: "properties", mimeType: "text/x-properties")
     case .protobuf:
       return Mode(name: "protobuf", mimeType: "text/x-protobuf")
     case .python:
@@ -237,6 +250,8 @@ public enum CodeMode: String {
       return Mode(name: "sql", mimeType: "text/x-sql")
     case .sqllite:
       return Mode(name: "sqllite", mimeType: "text/x-sqlite")
+    case .sparql:
+      return Mode(name: "sparql", mimeType: "application/sparql-query")
     case .mysql:
       return Mode(name: "mysql", mimeType: "text/x-mysql")
     case .latex:
@@ -246,7 +261,9 @@ public enum CodeMode: String {
     case .text:
       return Mode(name: "text", mimeType: "text/plain-text")
     case .toml:
-        return Mode(name: "toml", mimeType: "text/x-toml")
+      return Mode(name: "toml", mimeType: "text/x-toml")
+    case .turtle:
+      return Mode(name: "turtle", mimeType: "text/turtle")
     case .vb:
       return Mode(name: "vb", mimeType: "text/x-vb")
     case .vue:
