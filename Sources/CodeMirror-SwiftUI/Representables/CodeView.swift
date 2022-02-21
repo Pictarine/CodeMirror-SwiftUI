@@ -132,7 +132,8 @@ extension CodeView {
     #elseif os(iOS)
     webView.isOpaque = false
     #endif
-    
+    webView.scrollView.isScrollEnabled = false
+      
     let codeMirrorBundle = try! Bundle.codeMirrorBundle()
     guard let indexPath = codeMirrorBundle.path(forResource: "index", ofType: "html") else {
       fatalError("CodeMirrorBundle is missing")
