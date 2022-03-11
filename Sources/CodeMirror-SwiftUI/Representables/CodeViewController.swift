@@ -184,8 +184,12 @@ extension CodeViewController {
     setMimeType("application/json")
   }
   
-  func setReadonly(_ value: Bool) {
-    callJavascript(javascriptString: "SetReadOnly(\(value));")
+  func setReadonly(_ value: String) {
+    var jsString = "SetReadOnly(\(value));"
+    if value == "nocursor" {
+        jsString = "SetReadOnly(\"\(value)\");"
+    }
+    callJavascript(javascriptString: jsString)
   }
   
   func getTextSelection(_ block: JavascriptCallback?) {
